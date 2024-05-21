@@ -1,0 +1,21 @@
+name: deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::382041212397:role/sftp-github-role
+          role-session-name: github-session
+          aws-region: eu-west-1
+      - name: List buckets
+        run: aws s3 ls
