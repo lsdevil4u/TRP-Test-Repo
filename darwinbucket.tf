@@ -18,7 +18,6 @@ module "s3_bucket" {
 
   logging = {
     target_bucket = "my-s3-bucket1111"  # Replace with your logging target bucket
-    # target_prefix = ""  # Omitting this line will save logs directly in the target bucket
   }
 }
 
