@@ -22,6 +22,7 @@ module "s3_bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "block_public_access" {
+  bucket                  = module.s3_bucket.this_s3_bucket_id
   block_public_acls       = false
   block_public_policy     = false
   ignore_public_acls      = false
