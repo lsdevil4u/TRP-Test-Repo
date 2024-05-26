@@ -19,12 +19,5 @@ module "s3_bucket" {
     target_bucket = "my-s3-bucket1111"  # Replace with your logging target bucket
     target_prefix = ""  # Use an empty string to log to the root of the bucket
   }
-
-
-
-
-  # Optionally, enable versioning for the logs bucket as well
-  versioning {
-    enabled = true
-  }
 }
+
