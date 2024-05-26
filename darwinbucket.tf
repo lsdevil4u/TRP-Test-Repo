@@ -13,7 +13,6 @@ module "s3_bucket" {
   
   force_destroy = false
   versioning    = true
-  magellan_cors = true
   
   
 }
