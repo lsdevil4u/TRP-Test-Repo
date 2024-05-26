@@ -1,6 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Specify the AWS region
-}
+  }
 
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
