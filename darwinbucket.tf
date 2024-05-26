@@ -4,7 +4,7 @@ provider "aws" {
 
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-
+  
   bucket = "digitalrnd-gxp-genstab-prod-virginia-trp-27may2024"
   acl    = "private"
 
@@ -19,11 +19,12 @@ module "s3_bucket" {
     target_bucket = "my-s3-bucket1111"  # Replace with your logging target bucket
     target_prefix = ""  # Use an empty string to log to the root of the bucket
   }
+}
 
-  public_access_block = {
-    block_public_acls       = false
-    block_public_policy     = false
-    ignore_public_acls      = false
-    restrict_public_buckets = false
-  }
+resource "aws_s3_bucket_public_access_block" "block_public_access" {
+  bucket                  = module.s3_bucket.bucket_id
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
