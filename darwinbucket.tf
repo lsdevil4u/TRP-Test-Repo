@@ -4,8 +4,7 @@ provider "aws" {
 
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "3.6.0"  # Specify the version of the module
-
+  
   bucket = "digitalrnd-gxp-genstab-prod-virginia-trp-27may2024"
   acl    = "private"
 
@@ -20,7 +19,7 @@ module "s3_bucket" {
     target_bucket = "my-s3-bucket1111"  # Replace with your logging target bucket
     target_prefix = ""  # Use an empty string to log to the root of the bucket
   }
-}
+
 
 
 
