@@ -22,10 +22,7 @@ module "s3_bucket" {
   }
 }
 
-# Ensure the target logging bucket exists
-resource "aws_s3_bucket" "logs_bucket" {
-  bucket = "my-s3-bucket1111"
-  acl    = "log-delivery-write"
+
 
   # Optionally, enable versioning for the logs bucket as well
   versioning {
