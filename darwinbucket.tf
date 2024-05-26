@@ -4,7 +4,7 @@ provider "aws" {
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = "my-s3-bucket1234"
+  bucket = "digitalrnd-gxp-genstab-prod-virginia-trp-27may2024"
   acl    = "private"
 
   control_object_ownership = true
