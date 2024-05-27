@@ -19,7 +19,7 @@ module "s3_bucket" {
     target_prefix = ""  # Use an empty string to log to the root of the bucket
   }
 
-  lifecycle_rules = [
+  lifecycle_rule = [
     {
       id                                     = "rule1"
       enabled                                = true
