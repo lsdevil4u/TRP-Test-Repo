@@ -31,11 +31,11 @@ module "s3_bucket" {
         days = 56
       }
       transition = {
-        days          = 30
+        days          = 90
         storage_class = "GLACIER"
       }
       noncurrent_version_transition = {
-        days          = 30
+        days          = 90
         storage_class = "GLACIER"
       }
     }
