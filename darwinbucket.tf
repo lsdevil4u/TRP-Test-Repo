@@ -25,17 +25,17 @@ module "s3_bucket" {
       enabled                                = true
       abort_incomplete_multipart_upload_days = 1
       expiration = {
-        days = 1
+        days = 365  # Expire after one year
       }
       noncurrent_version_expiration = {
         days = 56
       }
       transition = {
-        days          = 90
+        days          = 30
         storage_class = "GLACIER"
       }
       noncurrent_version_transition = {
-        days          = 90
+        days          = 30
         storage_class = "GLACIER"
       }
     }
