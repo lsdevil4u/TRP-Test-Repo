@@ -22,7 +22,7 @@ module "s3_bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "block_public_access" {
-  bucket                  = digitalrnd-gxp-genstab-prod-virginia-trp-27may2024
+  bucket                  = module.s3_bucket.bucket
   block_public_acls       = false
   block_public_policy     = false
   ignore_public_acls      = false
