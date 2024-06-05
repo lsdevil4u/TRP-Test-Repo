@@ -55,6 +55,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Download plan file
+        uses: actions/download-artifact@v3
+        with:
+          name: tfplan
+          path: .
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -66,12 +72,6 @@ jobs:
           role-to-assume: arn:aws:iam::533266989803:role/sftp-github-role
           role-session-name: github-session
           aws-region: us-east-1
-
-      - name: Download plan file
-        uses: actions/download-artifact@v3
-        with:
-          name: tfplan
-          path: .
 
       - name: Initialize Terraform
         run: terraform init
