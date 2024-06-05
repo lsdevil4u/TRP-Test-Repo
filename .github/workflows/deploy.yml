@@ -40,9 +40,10 @@ jobs:
 
       - name: Upload tfplan to S3
         run: |
-          aws s3 cp tfplan s3://my-s3-bucket1111/tfplan
+          aws s3 cp tfplan s3://my-s3-bucket1111/tfplan   
         env:
           AWS_REGION: us-east-1
+#tfplan uploaded
 
   apply:
     if: github.event_name == 'workflow_dispatch'
