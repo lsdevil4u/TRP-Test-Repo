@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload tfplan to S3
         run: |
-          aws s3 cp tfplan s3://my-s3-bucket1111/testtfplan   
+          aws s3 cp testtfplan s3://my-s3-bucket1111/testtfplan   
         env:
           AWS_REGION: us-east-1
 #tfplan uploaded
