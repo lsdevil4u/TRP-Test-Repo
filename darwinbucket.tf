@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "s3_bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
+  source  = "github.com/lsdevil4u/TRP-Test-Repo/modules"
   bucket = "digitalrnd-gxp-genstab-prod-virginia-trp-27may2024"
   acl    = "private"
 
