@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "s3_bucket" {
-  source  = "github.com/lsdevil4u/TRP-Test-Repo/modules"
+  source  = "github.com/lsdevil4u/TRP-test-repo-module/module"
   bucket = "digitalrnd-gxp-genstab-prod-virginia-trp-27may2024"
   acl    = "private"
 
